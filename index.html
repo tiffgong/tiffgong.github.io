@@ -23,7 +23,7 @@
 		  font-family: 'Fira Sans', sans-serif;
 		}
 		body{
-		  background: #42455a;
+		  background: black;
 		  font-family: 'Fira Sans', sans-serif;
 		  color: white;
 		}
@@ -82,7 +82,48 @@
 		  transform: translateY(0);
 		  opacity: 1;
 		}
+		
+		header {
+		position: sticky;
+		top: 10px;
+		float: right;
+		right: 50px;
+		}
+		
+		.navbar li{
+			display: inline;
+			padding-left: 10px;
+		}
+		
+		a {
+			color: white;
+			text-decoration: none;
+		}
+		
+		.contentDiv {
+			
+			height: 100%;
+			position: absolute;
+			width: 100%;
+		}
 
+		@keyframes bouncing {
+			0% {bottom: 0;}
+			50% {bottom: 20px;}
+			100% {bottom: 0;}
+		}
+
+		.arrow {
+			animation: bouncing 1s infinite ease-in-out;
+			bottom: 0;
+			display: block;
+			height: 50px;
+			left: 57%;
+			position: absolute;
+			bottom: 0;
+			center: 0;
+			
+		}
 		</style>
 		<script>
 		
@@ -116,65 +157,65 @@
 		
 		window.addEventListener("scroll", reveal);
 		
+		
+		
 		</script>
 	</head>
 <body>
 
-
+  <header>
+  <ul class="navbar">
+    <li><a href="#about">01 : About</a></li>
+	<li><a href="#proj">02 : Projects</a></li>
+	<li><a href="#gall">03 : Gallery</a></li>
+	<li><a href="#gall">04 : Contact</a></li>
+	</ul>
+  </header>
 
 <section>
-<h1 id="demo"></h1>
 <body onload="typeWriter()">
+<h1 id="demo"></h1>
+
+<div class="contentDiv">
+    <img class="arrow" src="https://www.freeiconspng.com/uploads/white-down-arrow-png-2.png" />
+</div>
 </section>
+ <div id="about"></div>
 <section>
   <div class="container reveal">
     <h2>About Me</h2>
     <div class="text-container">
       <div class="text-box">
-        <h3>About Me</h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-          eius molestiae perferendis eos provident vitae iste.
+          I lik to program and draw 
         </p>
       </div>
-      <div class="text-box">
-        <h3>Projects</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-          eius molestiae perferendis eos provident vitae iste.
-        </p>
-      </div>
-      <div class="text-box">
-        <h3>Gallery</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-          eius molestiae perferendis eos provident vitae iste.
-        </p>
-      </div>
+     
     </div>
   </div>
 </section>
 
+ <div id="proj"></div>
 <section>
   <div class="container reveal">
     <h2>Projects</h2>
     <div class="text-container">
       <div class="text-box">
-        <h3>Section Text</h3>
+        <h3>project 1</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
           eius molestiae perferendis eos provident vitae iste.
         </p>
       </div>
       <div class="text-box">
-        <h3>Section Text</h3>
+        <h3>project 2</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
           eius molestiae perferendis eos provident vitae iste.
         </p>
       </div>
       <div class="text-box">
-        <h3>Section Text</h3>
+        <h3>project 3</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
           eius molestiae perferendis eos provident vitae iste.
@@ -184,6 +225,7 @@
   </div>
 </section>
 
+ <div id="gall"></div>
 <section>
   <div class="container reveal">
     <h2>Gallery</h2>
