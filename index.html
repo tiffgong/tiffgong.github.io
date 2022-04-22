@@ -1,37 +1,217 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>ButtonMove</title>
+		<title>Tiffany</title>
 		<style>
-			input#button {
-				position: absolute;
+		@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+		h1 {
+			left: 0;
+			line-height: 200px;
+			margin-top: -100px;
+			position: absolute;
+			text-align: center;
+			top: 50%;
+			width: 100%;
+			font-size: 75px;
+			font-family: 'Fira Sans', sans-serif;
 		}
+		
+		*{
+		  margin: 0;
+		  padding: 0;
+		  box-sizing: border-box;
+		  font-family: 'Fira Sans', sans-serif;
+		}
+		body{
+		  background: #42455a;
+		  font-family: 'Fira Sans', sans-serif;
+		  color: white;
+		}
+		section{
+		  min-height: 100vh;
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		}
+		section:nth-child(1){
+		  }
+		section:nth-child(2){
+		} 
+		section:nth-child(3){
+		}
+		section:nth-child(4){
+		}
+		section .container{
+		  margin: 100px;
+		}
+		section h2{
+		  font-size: 40px;
+		  text-align: center;
+		}
+		section .text-container{
+		   display: flex;
+		}
+		section .text-container .text-box{
+		  margin: 20px;
+		  padding: 20px;
+		}
+		section .text-container .text-box h3{
+		  font-size: 30px;
+		  text-align: center;
+		  margin-bottom: 10px;
+		}
+
+		@media (max-width: 900px){
+		  section h1{
+			font-size: 2rem;
+			text-align: center;
+		  }
+		  section .text-container{
+			flex-direction: column;
+		  }
+		}
+
+		.reveal{
+		  position: relative;
+		  transform: translateY(150px);
+		  opacity: 0;
+		  transition: 1s all ease;
+		}
+
+		.reveal.active{
+		  transform: translateY(0);
+		  opacity: 1;
+		}
+
 		</style>
 		<script>
 		
-			var red, green, blue;
-			red = Math.floor(Math.random() * 256);
-			green = Math.floor(Math.random() * 256);
-			blue = Math.floor(Math.random() * 256);
-			newColor = "rgb(" + red + "," + green + "," + blue +")";
-			
-			function outputHover() {
-				console.log("hovered");
-				document.getElementById('button').style.left = 
-				(Math.random() * 1500) + '1px';
-				document.getElementById('button').style.top =
-				(Math.random() * 1000) + '1px';
-			}
-			
-			function output() {
-				console.log("Clicked!");
-				document.body.style.backgroundColor = "rgb(" + red + "," + green + "," + blue +")";
-			}
-		</script>
 		
-	<body>
-		<input type='button' value='click-me' onMouseOver='outputHover();' 
-		id='button' onclick='output()' /> 
+		var i = 0;
+		var txt = 'Hello, World!';
+		var speed = 120;
 
-	</body>
+		function typeWriter() {
+		  if (i < txt.length) {
+			document.getElementById("demo").innerHTML += txt.charAt(i);
+			i++;
+			setTimeout(typeWriter, speed);
+		  }
+		}		
+		
+		
+		function reveal() {
+		  var reveals = document.querySelectorAll(".reveal");
+		  for (var i = 0; i < reveals.length; i++) {
+			var windowHeight = window.innerHeight;
+			var elementTop = reveals[i].getBoundingClientRect().top;
+			var elementVisible = 150;
+			if (elementTop < windowHeight - elementVisible) {
+			  reveals[i].classList.add("active");
+			} else {
+			  reveals[i].classList.remove("active");
+			}
+		  }
+		}
+		
+		window.addEventListener("scroll", reveal);
+		
+		</script>
+	</head>
+<body>
+
+
+
+<section>
+<h1 id="demo"></h1>
+<body onload="typeWriter()">
+</section>
+<section>
+  <div class="container reveal">
+    <h2>About Me</h2>
+    <div class="text-container">
+      <div class="text-box">
+        <h3>About Me</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+          eius molestiae perferendis eos provident vitae iste.
+        </p>
+      </div>
+      <div class="text-box">
+        <h3>Projects</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+          eius molestiae perferendis eos provident vitae iste.
+        </p>
+      </div>
+      <div class="text-box">
+        <h3>Gallery</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+          eius molestiae perferendis eos provident vitae iste.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container reveal">
+    <h2>Projects</h2>
+    <div class="text-container">
+      <div class="text-box">
+        <h3>Section Text</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+          eius molestiae perferendis eos provident vitae iste.
+        </p>
+      </div>
+      <div class="text-box">
+        <h3>Section Text</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+          eius molestiae perferendis eos provident vitae iste.
+        </p>
+      </div>
+      <div class="text-box">
+        <h3>Section Text</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+          eius molestiae perferendis eos provident vitae iste.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container reveal">
+    <h2>Gallery</h2>
+    <div class="text-container">
+      <div class="text-box">
+        <h3>Section Text</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+          eius molestiae perferendis eos provident vitae iste.
+        </p>
+      </div>
+      <div class="text-box">
+        <h3>Section Text</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+          eius molestiae perferendis eos provident vitae iste.
+        </p>
+      </div>
+      <div class="text-box">
+        <h3>Section Text</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+          eius molestiae perferendis eos provident vitae iste.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
 </html>
