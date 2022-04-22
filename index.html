@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ButtonMove</title>
+		<style>
+			input#button {
+				position: absolute;
+		}
+		</style>
+		<script>
+		
+			var red, green, blue;
+			red = Math.floor(Math.random() * 256);
+			green = Math.floor(Math.random() * 256);
+			blue = Math.floor(Math.random() * 256);
+			newColor = "rgb(" + red + "," + green + "," + blue +")";
+			
+			function outputHover() {
+				console.log("hovered");
+				document.getElementById('button').style.left = 
+				(Math.random() * 1500) + '1px';
+				document.getElementById('button').style.top =
+				(Math.random() * 1000) + '1px';
+			}
+			
+			function output() {
+				console.log("Clicked!");
+				document.body.style.backgroundColor = "rgb(" + red + "," + green + "," + blue +")";
+			}
+		</script>
+		
+	<body>
+		<input type='button' value='click-me' onMouseOver='outputHover();' 
+		id='button' onclick='output()' /> 
+
+	</body>
+</html>
