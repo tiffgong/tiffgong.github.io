@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  #draggable-container {
+    position: fixed; /* Keep the container fixed to the screen */
+    top: 10%; /* Adjust the top position */
+    left: 0;
+    width: 100vw; /* Ensure the container takes up the full width */
+    z-index: 9999;
+    overflow: visible; /* Allow elements to extend outside container bounds */
+  }
+  
+  .draggable {
+    width: 50px;
+    height: 50px;
+    background-color: #6e9bee;
+    border-radius: 8px;
+    position: absolute; /* Position them absolutely within the container */
+    max-width: 50px; /* Prevent them from overflowing */
+    max-height: 50px; /* Prevent them from overflowing */
+    }   
+/* Position draggable elements on the left side */
+  #draggable1 {
+    left: 0; /* Position this one on the left side */
+    top: 0; /* Adjust the position vertically */
+  }
+  
+  #draggable2 {
+    left: 0; /* Position this one on the left side */
+    top: 60px; /* Adjust the position vertically */
+  }
+  
+  /* Position draggable elements on the right side */
+  #draggable3 {
+    right: 0px; /* Position this one on the right side */
+    top: 120px; /* Adjust the position vertically */
+  }
+
+  body {
+    background-color: #ebdce4;
+    background-repeat: no-repeat;
+    background-position: 50% 5%;
+    font-family: 'Optima', sans-serif;
+    color: #201b1e;
+  }
+  
+
+  .image-container {
+    position: absolute;
+    top: 15%; /* Adjust this value to fine-tune image position */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 45%; /* Adjust the width of the image */
+    text-align: center;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  h1 {
+    left: 0;
+    margin-top: -50px; /* Fine-tune the spacing between image and text */
+    position: absolute;
+    text-align: center;
+    top: 55%; /* Adjust this to control vertical positioning of the text */
+    width: 100%;
+    font-size: 60px;
+    font-weight: 500;
+    z-index: 10;
+  }
+
+  .line {
+    border: 0;
+    height: 1px;
+    background-color: #6b4f6b; /* Adjust color as needed */
+    top: 55%;
+    position: absolute;
+    width: 10%; /* Make it a shorter line, adjust as needed */
+    margin: 50px auto; /* This centers the line and moves it down */
+  }
+  
+  h4 {
+    left: 0;
+    line-height: 200px;
+    margin-top: -70px;
+    position: absolute;
+    text-align: center;
+    top: 65%;
+    width: 100%;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  
+  section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  section .container {
+    margin: 100px;
+  }
+  
+  section h2 {
+    font-size: 40px;
+    text-align: center;
+  }
+  
+  section .text-container {
+    display: flex;
+  }
+  
+  section .text-container .text-box {
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  section .text-container .text-box h3 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  @media (max-width: 900px) {
+    section h1 {
+      font-size: 2rem;
+      text-align: center;
+    }
+  
+    section .text-container {
+      flex-direction: column;
+    }
+  }
+  
+  .reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+  }
+  
+  .reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 999; /* Lower z-index than modal */
+  }
+  
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: center;
+    position: fixed;
+    top: 10px;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+    z-index: 9999;
+  }
+
+  .navbar li {
+    list-style-type: none; 
+  }
+  
+  /* Left section: Tiffany Gong */
+  .navbar .left {
+    font-size: 24px;
+    color: #201b1e;
+  }
+  
+  /* Center section: About, Projects, Gallery */
+  .navbar .center {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 30px; /* Adjust this gap if needed */
+  }
+  
+  .navbar .center a {
+    font-size: 18px;
+    color: #201b1e;
+    text-decoration: none;
+  }
+  
+  
+  /* Right section: Let's Talk! */
+  .navbar .right a {
+    font-size: 18px;
+    color: #201b1e;
+    text-decoration: none;
+  }
+  
+  a {
+    color: #201b1e;
+    text-decoration: none;
+  }
+  
+  .contentDiv {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+  
+  @keyframes bouncing {
+    0% {
+      bottom: 0;
+    }
+    50% {
+      bottom: 20px;
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+  
+  .arrow {
+    animation: bouncing 1s infinite ease-in-out;
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center the arrow horizontally */
+    width: 30px;
+    height: 30px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    display: none;  /* Initially hidden */
+  }
+  
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+    padding: 100px;
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0; 
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .gallery img:hover {
+    filter: brightness(50%);
+  }
+  
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Image styling in modal (auto-fit) */
+  .modal img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Arrows and X button position adjustment */
+  .modal .carousel-btn {
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    transform: translateY(-50%);
+    z-index: 1001; /* Ensure buttons are on top */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px; /* Make the button area larger */
+    height: 60px; /* Make the button area larger */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: background to make the button area more visible */
+    border-radius: 50%; /* Make the button circular */
+    text-align: center;
+  }
+  
+  /* Position the left arrow (top-left corner) */
+  .modal .prev-btn {
+    left: 20px;
+  }
+  
+  /* Position the right arrow (top-right corner) */
+  .modal .next-btn {
+    right: 20px;
+  }
+  
+  /* Position the exit button (top-right corner) */
+  .modal .exit-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's on top */
+  }
+
+  .gallery-text {
+    display: flex;
+    justify-content: center;  /* This centers the text horizontally */
+    align-items: center;      /* This centers the text vertically if you set a height */
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .hidden {
+    display: none;
+  }
+  
+  #contact {
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .socials {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .socials li {
+    margin: 10px 0;
+  }
+  
+  .socials a {
+    text-decoration: none;
+    color: #ff6f61;
+    font-weight: bold;
+  }
+
+  .contact-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .contact-form label {
+    width: 100%;
+    max-width: 400px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #ff6f61;
+    border-radius: 8px;
+    font-family: 'Fira Sans', sans-serif;
+  }
+  
+  .contact-form button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .contact-form button:hover {
+    background-color: #e25b50;
+  }

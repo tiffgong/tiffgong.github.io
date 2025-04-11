@@ -1,280 +1,131 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Tiffany</title>
-		<style>
-		@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
-		h1 {
-			left: 0;
-			line-height: 200px;
-			margin-top: -150px;
-			position: absolute;
-			text-align: center;
-			top: 50%;
-			width: 100%;
-			font-size: 75px;
-		}
-		
-		h4 {
-			left: 0;
-			line-height: 200px;
-			margin-top: -70px;
-			position: absolute;
-			text-align: center;
-			top: 50%;
-			width: 100%;
-			font-size: 50px;
-		}
-		
-		*{
-		  margin: 0;
-		  padding: 0;
-		  box-sizing: border-box;
-		}
-		body{
-		  background-color: #141414;
-		  background-image: url("https://i.pinimg.com/originals/b7/72/5f/b7725ffdacac34e9e0295d152e4cc1b9.gif");
-		  background-repeat: no-repeat;
-		  background-position: 50% 5%;
-		  font-family: 'Fira Sans', sans-serif;
-		  color: white;
-		}
-		section{
-		  min-height: 100vh;
-		  display: flex;
-		  justify-content: center;
-		  align-items: center;
-		}
-		section:nth-child(1){
-		  }
-		section:nth-child(2){
-		} 
-		section:nth-child(3){
-		}
-		section:nth-child(4){
-		}
-		section .container{
-		  margin: 100px;
-		}
-		section h2{
-		  font-size: 40px;
-		  text-align: center;
-		}
-		section .text-container{
-		   display: flex;
-		}
-		section .text-container .text-box{
-		  margin: 20px;
-		  padding: 20px;
-		}
-		section .text-container .text-box h3{
-		  font-size: 30px;
-		  text-align: center;
-		  margin-bottom: 10px;
-		}
-
-		@media (max-width: 900px){
-		  section h1{
-			font-size: 2rem;
-			text-align: center;
-		  }
-		  section .text-container{
-			flex-direction: column;
-		  }
-		}
-
-		.reveal{
-		  position: relative;
-		  transform: translateY(150px);
-		  opacity: 0;
-		  transition: 1s all ease;
-		}
-
-		.reveal.active{
-		  transform: translateY(0);
-		  opacity: 1;
-		}
-		
-		header {
-		position: sticky;
-		top: 10px;
-		float: right;
-		right: 50px;
-		z-index: 9999;
-		}
-		
-		.navbar li{
-			display: inline;
-			padding-left: 10px;
-			position: relative;
-		}
-		
-		a {
-			color: white;
-			text-decoration: none;
-		}
-		
-		.contentDiv {
-			height: 100%;
-			position: absolute;
-			width: 100%;
-		}
-
-		@keyframes bouncing {
-			0% {bottom: 0;}
-			50% {bottom: 20px;}
-			100% {bottom: 0;}
-		}
-
-		.arrow {
-			animation: bouncing 1s infinite ease-in-out;
-			bottom: 0;
-			display: block;
-			height: 50px;
-			position: fixed;
-			left: 50%;
-			bottom: 20px;
-			transform: translate(-50%, -50%);
-			margin: 0 auto;
-		}
-		</style>
-		<script>
-		
-		
-		var i = 0;
-		var txt = 'Hello, World!';
-		var speed = 150;
-
-		function typeWriter() {
-		  if (i < txt.length) {
-			document.getElementById("demo").innerHTML += txt.charAt(i);
-			i++;
-			setTimeout(typeWriter, speed);
-		  }
-		}		
-		
-		
-		function reveal() {
-		  var reveals = document.querySelectorAll(".reveal");
-		  for (var i = 0; i < reveals.length; i++) {
-			var windowHeight = window.innerHeight;
-			var elementTop = reveals[i].getBoundingClientRect().top;
-			var elementVisible = 150;
-			if (elementTop < windowHeight - elementVisible) {
-			  reveals[i].classList.add("active");
-			} else {
-			  reveals[i].classList.remove("active");
-			}
-		  }
-		}
-		
-		window.addEventListener("scroll", reveal);
-		
-		window.onscroll = function(ev) {
-		if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
-		document.getElementById("el").style.display='none';
-		}
-		};
-		
-		</script>
-	</head>
-<body>
-
-
-  <header>
-  <ul class="navbar">
-    <li><a href="#about">01 : About</a></li>
-	<li><a href="#proj">02 : Projects</a></li>
-	<li><a href="#gall">03 : Gallery</a></li>
-	<li><a href="#gall">04 : Contact</a></li>
-	</ul>
-  </header> 
-
-<section>
-<h1>Tiffany Gong</h1>
+<head>
+  <title>Tiffany</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+  <script defer src="scroll.js"></script>
+</head>
 <body onload="typeWriter()">
-<h4 id="demo"></h4>
+	<header>
+		<ul class="navbar">
+			<li class="left"><a href="#">Tiffany Gong</li>
+			<li class="center">
+			<a href="#about" onclick="goBack()">About</a>
+			<a href="#proj" onclick="goBack()">Projects</a>
+			<a href="#gall" onclick="goBack()">Gallery</a>
+			</li>
+			<li class="right"><a href="#contact">Let's Talk!</a></li>
+		</ul>
+	</header>
 
-<div  class="contentDiv">
-    <img id='el'class="arrow" src="https://www.freeiconspng.com/uploads/white-down-arrow-png-2.png" />
-</div>
+  <section>
+	<div class="image-container">
+		<img src="imgs/frierennnnn.jpg" alt="i drew hehe">
+	  </div>
 
-</section>
- <div id="about"></div>
-<section>
-  <div class="container reveal">
-    <h2>About Me</h2>
-    <div class="text-container">
-      <div class="text-box">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-          eius molestiae perferendis eos provident vitae iste.
-        </p>
-      </div>
-     
+    <h1>Tiffany Gong</h1>
+
+	<hr class="line">
+
+    <h4 id="demo"></h4>
+
+    <div class="contentDiv">
+		<div class="arrow"></div>
     </div>
-  </div>
-</section>
+  </section>
 
- <div id="proj"></div>
-<section>
-  <div class="container reveal">
-    <h2>Projects</h2>
-    <div class="text-container">
-      <div class="text-box">
-        <h3>VR Game Project(Unity and C#)</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-          eius molestiae perferendis eos provident vitae iste.
-        </p>
-      </div>
-      <div class="text-box">
-        <h3>Ghost Shooter in Java</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-          eius molestiae perferendis eos provident vitae iste.
-        </p>
-      </div>
-      <div class="text-box">
-        <h3>Others</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-          eius molestiae perferendis eos provident vitae iste.
-        </p>
+  <div id="draggable-container">
+	<div class="draggable" id="draggable1"></div>
+	<div class="draggable" id="draggable2"></div>
+	<div class="draggable" id="draggable3"></div>
+  </div>
+
+  <div id="about"></div>
+  <section>
+    <div class="container reveal">
+      <h2>About Me</h2>
+      <div class="text-container">
+        <div class="text-box">
+          <p>
+            4th year student at UBC doing BSc majoring in Mathematics :)
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
- <div id="gall"></div>
-<section>
-  <div class="container reveal">
-    <h2>Gallery</h2>
-    <div class="text-container">
-      <div class="text-box">
-        <h3>Section Text</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-          eius molestiae perferendis eos provident vitae iste.
-        </p>
-      </div>
-      <div class="text-box">
-        <h3>Section Text</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-          eius molestiae perferendis eos provident vitae iste.
-        </p>
-      </div>
-      <div class="text-box">
-        <h3>Section Text</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-          eius molestiae perferendis eos provident vitae iste.
-        </p>
+  <div id="proj"></div>
+  <section>
+    <div class="container reveal">
+      <h2>Projects</h2>
+      <div class="text-container">
+        <div class="text-box">
+          <h3>VR Game Project</h3>
+          <p>(Unity and C#)</p>
+        </div>
+        <div class="text-box">
+          <h3>Ghost Shooter</h3>
+          <p>Java</p>
+        </div>
+        <div class="text-box">
+          <h3>Others</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+        </div>
       </div>
     </div>
+  </section>
+
+  <div id="gall"></div>
+  <section>
+    <div class="container reveal">
+      <h2>Art Gallery</h2>
+	  <div class="gallery-text">
+        <div class="gallery-text-box">
+          <p>I like to draw sometimes!</p>
+        </div>
+	  </div>
+      <div class="gallery">
+		<img src="gallery/dynastyoc.jpg" alt="Project 1">
+		<img src="gallery/IMG_0192.jpg" alt="Project 2">
+		<img src="gallery/redr.jpg" alt="Project 3">
+	  </div>
+    </div>
+  </section>
+
+  <!-- Modal for enlarging images -->
+<div id="imageModal" class="modal">
+	<div class="modal-content">
+	  <span class="exit-btn" onclick="closeModal()">X</span>
+	  <img id="modalImage" src="" alt="Enlarged Image">
+	  <span class="carousel-btn prev-btn" onclick="changeImage(-1)">&#10094;</span>
+	  <span class="carousel-btn next-btn" onclick="changeImage(1)">&#10095;</span>
+	</div>
+  </div>
+
+<section id="contact" class="hidden">
+  <div class="container">
+    <h2>Hii!</h2>
+    <p>Find me on my socials or send me a message 👇</p>
+
+    <ul class="socials">
+      <li>Connect with my <a href="https://www.linkedin.com/in/tiffany-gong-6a2293171/" target="_blank">LinkedIn</a></li>
+      <li>Email me at <a href="mailto:tiffanygong@shaw.ca">tiffanygong@shaw.ca</a></li>
+    </ul>
+
+    <form action="https://formspree.io/f/mvgkdepz" method="POST" class="contact-form">
+      <label>
+        Your email:
+        <input type="email" name="email" placeholder="Optional">
+      </label>
+      <label>
+        Your message:
+        <textarea name="message" placeholder="Write something nice :)"></textarea>
+      </label>
+      <button type="submit">Send</button>
+    </form>
+
   </div>
 </section>
-
 </body>
 </html>

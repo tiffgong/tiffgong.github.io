@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Tiffany Gong</title>
+		<title>Tiffany</title>
 		<style>
 		@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 		h1 {
 			left: 0;
 			line-height: 200px;
-			margin-top: -100px;
+			margin-top: -150px;
 			position: absolute;
 			text-align: center;
 			top: 50%;
 			width: 100%;
 			font-size: 75px;
-			font-family: 'Fira Sans', sans-serif;
+		}
+		
+		h4 {
+			left: 0;
+			line-height: 200px;
+			margin-top: -70px;
+			position: absolute;
+			text-align: center;
+			top: 50%;
+			width: 100%;
+			font-size: 50px;
 		}
 		
 		*{
 		  margin: 0;
 		  padding: 0;
 		  box-sizing: border-box;
-		  font-family: 'Fira Sans', sans-serif;
 		}
 		body{
 		  background-color: #141414;
@@ -91,12 +100,13 @@
 		top: 10px;
 		float: right;
 		right: 50px;
-		z-index: 1100;
+		z-index: 9999;
 		}
 		
 		.navbar li{
 			display: inline;
 			padding-left: 10px;
+			position: relative;
 		}
 		
 		a {
@@ -105,7 +115,6 @@
 		}
 		
 		.contentDiv {
-			
 			height: 100%;
 			position: absolute;
 			width: 100%;
@@ -122,11 +131,11 @@
 			bottom: 0;
 			display: block;
 			height: 50px;
-			left: 61%;
-			position: absolute;
-			bottom: 0;
-			center: 0;
-			
+			position: fixed;
+			left: 50%;
+			bottom: 20px;
+			transform: translate(-50%, -50%);
+			margin: 0 auto;
 		}
 		</style>
 		<script>
@@ -134,7 +143,7 @@
 		
 		var i = 0;
 		var txt = 'Hello, World!';
-		var speed = 120;
+		var speed = 150;
 
 		function typeWriter() {
 		  if (i < txt.length) {
@@ -161,11 +170,16 @@
 		
 		window.addEventListener("scroll", reveal);
 		
-		
+		window.onscroll = function(ev) {
+		if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+		document.getElementById("el").style.display='none';
+		}
+		};
 		
 		</script>
 	</head>
 <body>
+
 
   <header>
   <ul class="navbar">
@@ -174,15 +188,17 @@
 	<li><a href="#gall">03 : Gallery</a></li>
 	<li><a href="#gall">04 : Contact</a></li>
 	</ul>
-  </header>
+  </header> 
 
 <section>
+<h1>Tiffany Gong</h1>
 <body onload="typeWriter()">
-<h1 id="demo"></h1>
+<h4 id="demo"></h4>
 
-<div class="contentDiv">
-    <img class="arrow" src="https://www.freeiconspng.com/uploads/white-down-arrow-png-2.png" />
+<div  class="contentDiv">
+    <img id='el'class="arrow" src="https://www.freeiconspng.com/uploads/white-down-arrow-png-2.png" />
 </div>
+
 </section>
  <div id="about"></div>
 <section>
@@ -191,7 +207,8 @@
     <div class="text-container">
       <div class="text-box">
         <p>
-          I lik to program and draw 
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+          eius molestiae perferendis eos provident vitae iste.
         </p>
       </div>
      
@@ -205,21 +222,21 @@
     <h2>Projects</h2>
     <div class="text-container">
       <div class="text-box">
-        <h3>project 1</h3>
+        <h3>VR Game Project(Unity and C#)</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
           eius molestiae perferendis eos provident vitae iste.
         </p>
       </div>
       <div class="text-box">
-        <h3>project 2</h3>
+        <h3>Ghost Shooter in Java</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
           eius molestiae perferendis eos provident vitae iste.
         </p>
       </div>
       <div class="text-box">
-        <h3>project 3</h3>
+        <h3>Others</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
           eius molestiae perferendis eos provident vitae iste.
