@@ -82,7 +82,7 @@
     background-color: #ebdce4;
     background-repeat: no-repeat;
     background-position: 50% 5%;
-    font-family: 'Optima', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     color: #201b1e;
   }
   
@@ -110,6 +110,7 @@
     width: 100%;
     font-size: 60px;
     font-weight: 500;
+    font-family: 'Source Sans Pro', sans-serif;
     z-index: 10;
   }
 
