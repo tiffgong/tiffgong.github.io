@@ -7,7 +7,8 @@
 /*the flowers*/
   #draggable-container {
     position: fixed; 
-    top: 10%; 
+    top: 0%; 
+    bottom: 0%;
     left: 0;
     width: 100vw; 
     z-index: 9999;
@@ -24,58 +25,53 @@
     }   
 
   #draggable1 {
-    left: 0; 
-    top: 0; 
+    left: 0%; 
+    top: 13%; 
     background-image: url('imgs/flowers/flower5.png'); 
   }
   
-  #draggable2 {
-    left: 0; 
-    top: 60px; 
-    background-image: url('imgs/flowers/flower6.png'); 
-  }
-  
-  #draggable6 {
-    left: 30;
-    top: 150px; 
-    background-image: url('imgs/flowers/flower5.png'); 
-  }
-
   #draggable7 {
-    left: 50; 
-    top: 200px; 
+    left: 1%; 
+    top: 40%; 
     background-image: url('imgs/flowers/flower4.png'); 
   }
 
   #draggable8 {
-    left: 0;
-    top: 350px; 
+    left: 0%;
+    top: 65%; 
     background-image: url('imgs/flowers/flower7.png'); 
   }
 
+  #draggable6 {
+    left: 0%;
+    top: 20%; 
+    background-image: url('imgs/flowers/flower6.png'); 
+  }
+  
+  #draggable2 {
+    right: 0%; 
+    top: 55%; 
+    background-image: url('imgs/flowers/flower6.png'); 
+  }
+
   #draggable3 {
-    right: 0px; 
-    top: 120px; 
+    right: 0%; 
+    top: 17%; 
     background-image: url('imgs/flowers/flower8.png'); 
   }
 
   #draggable4 {
-    right: 20px; 
-    top: 200px; 
+    right: 2%; 
+    top: 25%; 
     background-image: url('imgs/flowers/flower7.png'); 
   }
 
   #draggable5 {
-    right: 10px; 
-    top: 280px; 
+    right: 1%; 
+    top: 40%; 
     background-image: url('imgs/flowers/flower4.png'); 
   }
 
-  #draggable6 {
-    right: 10px;
-    top: 330px; 
-    background-image: url('imgs/flowers/flower6.png'); 
-  }
 
 
   body {
@@ -110,7 +106,6 @@
     width: 100%;
     font-size: 60px;
     font-weight: 500;
-    font-family: 'Source Sans Pro', sans-serif;
     z-index: 10;
   }
 
