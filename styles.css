@@ -4,76 +4,76 @@
     box-sizing: border-box;
   }
 
+/*the flowers*/
   #draggable-container {
-    position: fixed; /* Keep the container fixed to the screen */
-    top: 10%; /* Adjust the top position */
+    position: fixed; 
+    top: 10%; 
     left: 0;
-    width: 100vw; /* Ensure the container takes up the full width */
+    width: 100vw; 
     z-index: 9999;
-    overflow: visible; /* Allow elements to extend outside container bounds */
+    overflow: visible; /
   }
   
   .draggable {
     width: 90px;
     height: 90px;
     background-size: 100%; 
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Don't repeat the image */
-    position: absolute; /* Position them absolutely within the container */
+    background-position: center; 
+    background-repeat: no-repeat; 
+    position: absolute; 
     }   
 
   #draggable1 {
-    left: 0; /* Position this one on the left side */
-    top: 0; /* Adjust the position vertically */
+    left: 0; 
+    top: 0; 
     background-image: url('imgs/flowers/flower5.png'); 
   }
   
   #draggable2 {
-    left: 0; /* Position this one on the left side */
-    top: 60px; /* Adjust the position vertically */
+    left: 0; 
+    top: 60px; 
     background-image: url('imgs/flowers/flower6.png'); 
   }
   
   #draggable6 {
-    left: 30; /* Position this one on the left side */
-    top: 150px; /* Adjust the position vertically */
+    left: 30;
+    top: 150px; 
     background-image: url('imgs/flowers/flower5.png'); 
   }
 
   #draggable7 {
-    left: 50; /* Position this one on the left side */
-    top: 200px; /* Adjust the position vertically */
+    left: 50; 
+    top: 200px; 
     background-image: url('imgs/flowers/flower4.png'); 
   }
 
   #draggable8 {
-    left: 0; /* Position this one on the left side */
-    top: 350px; /* Adjust the position vertically */
+    left: 0;
+    top: 350px; 
     background-image: url('imgs/flowers/flower7.png'); 
   }
 
-  /* Position draggable elements on the right side */
   #draggable3 {
-    right: 0px; /* Position this one on the right side */
-    top: 120px; /* Adjust the position vertically */
+    right: 0px; 
+    top: 120px; 
     background-image: url('imgs/flowers/flower8.png'); 
   }
 
   #draggable4 {
-    right: 20px; /* Position this one on the right side */
-    top: 200px; /* Adjust the position vertically */
+    right: 20px; 
+    top: 200px; 
     background-image: url('imgs/flowers/flower7.png'); 
   }
 
   #draggable5 {
-    right: 10px; /* Position this one on the right side */
-    top: 280px; /* Adjust the position vertically */
+    right: 10px; 
+    top: 280px; 
     background-image: url('imgs/flowers/flower4.png'); 
   }
 
   #draggable6 {
-    right: 10px; /* Position this one on the right side */
-    top: 330px; /* Adjust the position vertically */
+    right: 10px;
+    top: 330px; 
     background-image: url('imgs/flowers/flower6.png'); 
   }
 
@@ -89,17 +89,17 @@
 
   .image-container {
     position: absolute;
-    top: 15%; /* Adjust this value to fine-tune image position */
+    top: 15%;
     left: 50%;
     transform: translateX(-50%);
-    width: 45%; /* Adjust the width of the image */
+    width: 45%; 
     text-align: center;
   }
   
   .image-container img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
+
   }
 
   h1 {
@@ -116,11 +116,11 @@
   .line {
     border: 0;
     height: 1px;
-    background-color: #6b4f6b; /* Adjust color as needed */
+    background-color: #6b4f6b; 
     top: 55%;
     position: absolute;
-    width: 10%; /* Make it a shorter line, adjust as needed */
-    margin: 50px auto; /* This centers the line and moves it down */
+    width: 10%; 
+    margin: 50px auto; 
   }
   
   h4 {
@@ -129,7 +129,7 @@
     margin-top: -70px;
     position: absolute;
     text-align: center;
-    top: 65%;
+    top: 60%;
     width: 100%;
     font-weight: 500;
     font-size: 20px;
@@ -281,26 +281,46 @@
   }
   
 
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-    margin-top: 20px;
-    padding: 100px;
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
   }
   
-  .gallery img {
+  .column {
+    flex: 33%;
+    max-width: 33%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
     width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 0; 
+    border-radius: 4px;
     transition: transform 0.3s ease, filter 0.3s ease;
     cursor: pointer;
   }
   
-  .gallery img:hover {
-    filter: brightness(50%);
+  .column img:hover {
+    filter: brightness(70%);
   }
+
+
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
   
   .modal {
     display: none; /* Hidden by default */
@@ -309,13 +329,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
     justify-content: center;
     align-items: center;
     z-index: 1000;
   }
   
-  /* Image styling in modal (auto-fit) */
   .modal img {
     max-width: 100%;
     max-height: 90vh;
@@ -323,7 +342,6 @@
     transition: transform 0.3s ease;
   }
   
-  /* Arrows and X button position adjustment */
   .modal .carousel-btn {
     position: absolute;
     top: 50%;
@@ -331,28 +349,25 @@
     color: #fff;
     cursor: pointer;
     transform: translateY(-50%);
-    z-index: 1001; /* Ensure buttons are on top */
+    z-index: 1001; 
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60px; /* Make the button area larger */
-    height: 60px; /* Make the button area larger */
-    background-color: rgba(0, 0, 0, 0.5); /* Optional: background to make the button area more visible */
-    border-radius: 50%; /* Make the button circular */
+    width: 60px; 
+    height: 60px; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 50%; 
     text-align: center;
   }
   
-  /* Position the left arrow (top-left corner) */
   .modal .prev-btn {
     left: 20px;
   }
   
-  /* Position the right arrow (top-right corner) */
   .modal .next-btn {
     right: 20px;
   }
   
-  /* Position the exit button (top-right corner) */
   .modal .exit-btn {
     position: absolute;
     top: 20px;
@@ -360,14 +375,13 @@
     color: #fff;
     font-size: 30px;
     cursor: pointer;
-    z-index: 1001; /* Ensure it's on top */
+    z-index: 1001; 
   }
 
   .gallery-text {
     display: flex;
-    justify-content: center;  /* This centers the text horizontally */
-    align-items: center;      /* This centers the text vertically if you set a height */
-    margin: 20px;
+    justify-content: center;  
+    align-items: center;    
     padding: 20px;
   }
 
@@ -391,7 +405,7 @@
   
   .socials a {
     text-decoration: none;
-    color: #ff6f61;
+    color: #6e7dc0;
     font-weight: bold;
   }
 
@@ -415,22 +429,19 @@
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    border: 2px solid #ff6f61;
-    border-radius: 8px;
-    font-family: 'Fira Sans', sans-serif;
   }
   
   .contact-form button {
-    background-color: #ff6f61;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
+    background-color: #6e7dc0;
     transition: background-color 0.2s ease-in-out;
   }
   
   .contact-form button:hover {
-    background-color: #e25b50;
+    filter: brightness(70%);
   }

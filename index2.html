@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tiffany</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+  <script defer src="scroll.js"></script>
+</head>
+<body onload="typeWriter()">
+	<header>
+		<ul class="navbar">
+			<li class="left"><a href="#">Tiffany Gong</a></li>
+			<li class="center">
+			<a href="#about" onclick="goBack()">About</a>
+			<a href="#proj" onclick="goBack()">Projects</a>
+			<a href="#gall" onclick="goBack()">Gallery</a>
+			</li>
+			<li class="right"><a href="#contact">Let's Talk!</a></li>
+		</ul>
+	</header>
+
+  <section>
+	<div class="image-container">
+		<img src="imgs/frierennnnn.jpg" alt="i drew hehe">
+	  </div>
+
+    <h1>Tiffany Gong</h1>
+
+	<hr class="line">
+
+    <h4 id="demo"></h4>
+
+    <div class="contentDiv">
+		<div class="arrow"></div>
+    </div>
+  </section>
+
+  <div id="draggable-container">
+	<div class="draggable" id="draggable1"></div>
+	<div class="draggable" id="draggable2"></div>
+	<div class="draggable" id="draggable3"></div>
+  </div>
+
+  <div id="about"></div>
+  <section>
+    <div class="container reveal">
+      <h2>About Me</h2>
+      <div class="text-container">
+        <div class="text-box">
+          <p>
+            4th year student at UBC doing BSc majoring in Mathematics :)
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="proj"></div>
+  <section>
+    <div class="container reveal">
+      <h2>Projects</h2>
+      <div class="text-container">
+        <div class="text-box">
+          <h3>VR Game Project</h3>
+          <p>(Unity and C#)</p>
+        </div>
+        <div class="text-box">
+          <h3>Ghost Shooter</h3>
+          <p>Java</p>
+        </div>
+        <div class="text-box">
+          <h3>Others</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="gall"></div>
+  <section>
+    <div class="container reveal">
+      <h2>Art Gallery</h2>
+	  <div class="gallery-text">
+        <div class="gallery-text-box">
+          <p>I like to draw sometimes!</p>
+        </div>
+	  </div>
+      <div class="gallery">
+		<img src="gallery/dynastyoc.jpg" alt="Project 1">
+		<img src="gallery/IMG_0192.jpg" alt="Project 2">
+		<img src="gallery/redr.jpg" alt="Project 3">
+	  </div>
+    </div>
+  </section>
+
+  <!-- Modal for enlarging images -->
+<div id="imageModal" class="modal">
+	<div class="modal-content">
+	  <span class="exit-btn" onclick="closeModal()">X</span>
+	  <img id="modalImage" src="" alt="Enlarged Image">
+	  <span class="carousel-btn prev-btn" onclick="changeImage(-1)">&#10094;</span>
+	  <span class="carousel-btn next-btn" onclick="changeImage(1)">&#10095;</span>
+	</div>
+  </div>
+
+<section id="contact" class="hidden">
+  <div class="container">
+    <h2>Hii!</h2>
+    <p>Find me on my socials or send me a message 👇</p>
+
+    <ul class="socials">
+      <li>Connect with my <a href="https://www.linkedin.com/in/tiffany-gong-6a2293171/" target="_blank">LinkedIn</a></li>
+      <li>Email me at <a href="mailto:tiffanygong@shaw.ca">tiffanygong@shaw.ca</a></li>
+    </ul>
+
+    <form action="https://formspree.io/f/mvgkdepz" method="POST" class="contact-form">
+      <label>
+        Your email:
+        <input type="email" name="email" placeholder="Optional">
+      </label>
+      <label>
+        Your message:
+        <textarea name="message" placeholder="Write something nice :)"></textarea>
+      </label>
+      <button type="submit">Send</button>
+    </form>
+
+  </div>
+</section>
+</body>
+</html>
