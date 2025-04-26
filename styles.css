@@ -14,30 +14,69 @@
   }
   
   .draggable {
-    width: 50px;
-    height: 50px;
-    background-color: #6e9bee;
-    border-radius: 8px;
+    width: 90px;
+    height: 90px;
+    background-size: 100%; 
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Don't repeat the image */
     position: absolute; /* Position them absolutely within the container */
-    max-width: 50px; /* Prevent them from overflowing */
-    max-height: 50px; /* Prevent them from overflowing */
     }   
-/* Position draggable elements on the left side */
+
   #draggable1 {
     left: 0; /* Position this one on the left side */
     top: 0; /* Adjust the position vertically */
+    background-image: url('imgs/flowers/flower5.png'); 
   }
   
   #draggable2 {
     left: 0; /* Position this one on the left side */
     top: 60px; /* Adjust the position vertically */
+    background-image: url('imgs/flowers/flower6.png'); 
   }
   
+  #draggable6 {
+    left: 30; /* Position this one on the left side */
+    top: 150px; /* Adjust the position vertically */
+    background-image: url('imgs/flowers/flower5.png'); 
+  }
+
+  #draggable7 {
+    left: 50; /* Position this one on the left side */
+    top: 200px; /* Adjust the position vertically */
+    background-image: url('imgs/flowers/flower4.png'); 
+  }
+
+  #draggable8 {
+    left: 0; /* Position this one on the left side */
+    top: 350px; /* Adjust the position vertically */
+    background-image: url('imgs/flowers/flower7.png'); 
+  }
+
   /* Position draggable elements on the right side */
   #draggable3 {
     right: 0px; /* Position this one on the right side */
     top: 120px; /* Adjust the position vertically */
+    background-image: url('imgs/flowers/flower8.png'); 
   }
+
+  #draggable4 {
+    right: 20px; /* Position this one on the right side */
+    top: 200px; /* Adjust the position vertically */
+    background-image: url('imgs/flowers/flower7.png'); 
+  }
+
+  #draggable5 {
+    right: 10px; /* Position this one on the right side */
+    top: 280px; /* Adjust the position vertically */
+    background-image: url('imgs/flowers/flower4.png'); 
+  }
+
+  #draggable6 {
+    right: 10px; /* Position this one on the right side */
+    top: 330px; /* Adjust the position vertically */
+    background-image: url('imgs/flowers/flower6.png'); 
+  }
+
 
   body {
     background-color: #ebdce4;
@@ -65,10 +104,9 @@
 
   h1 {
     left: 0;
-    margin-top: -50px; /* Fine-tune the spacing between image and text */
     position: absolute;
     text-align: center;
-    top: 55%; /* Adjust this to control vertical positioning of the text */
+    top: 50%; 
     width: 100%;
     font-size: 60px;
     font-weight: 500;
