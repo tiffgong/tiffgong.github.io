@@ -12,7 +12,8 @@
     left: 0;
     width: 100vw; 
     z-index: 9999;
-    overflow: visible; /
+    overflow: visible; 
+    pointer-events: none;
   }
   
   .draggable {
@@ -22,6 +23,7 @@
     background-position: center; 
     background-repeat: no-repeat; 
     position: absolute; 
+    pointer-events: auto;
     }   
 
   #draggable1 {
@@ -71,8 +73,6 @@
     top: 40%; 
     background-image: url('imgs/flowers/flower4.png'); 
   }
-
-
 
   body {
     background-color: #ebdce4;
@@ -222,7 +222,7 @@
     display: flex;
     justify-content: center;
     flex-grow: 1;
-    gap: 30px; /* Adjust this gap if needed */
+    gap: 30px; 
   }
   
   .navbar .center a {
@@ -231,8 +231,7 @@
     text-decoration: none;
   }
   
-  
-  /* Right section: Let's Talk! */
+
   .navbar .right a {
     font-size: 18px;
     color: #201b1e;
@@ -265,17 +264,16 @@
   .arrow {
     animation: bouncing 1s infinite ease-in-out;
     position: fixed;
-    bottom: 20px; /* Distance from the bottom */
+    bottom: 20px; 
     left: 50%;
-    transform: translateX(-50%); /* Center the arrow horizontally */
+    transform: translateX(-50%); 
     width: 30px;
     height: 30px;
     border: solid black;
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
-    display: none;  /* Initially hidden */
+    display: none;  
   }
-  
 
   .row {
     display: flex;
